@@ -1,0 +1,10 @@
+package com.basics.test;
+
+public class TestStack {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.print("Hello WOrld");
+	}
+
+}

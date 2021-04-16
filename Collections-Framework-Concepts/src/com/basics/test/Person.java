@@ -1,6 +1,6 @@
 package com.basics.test;
 
-public class Person {
+public class Person implements Comparable<Person>{
 
 	private int id;
 	private String firstName;
@@ -71,6 +71,11 @@ public class Person {
 		Person p = (Person) obj;
 		return this.id==p.getId() ? true : false;
 	}
-	
+
+	@Override
+	public int compareTo(Person person) {
+		// TODO Auto-generated method stub
+		return this.id - person.getId();
+	}
 	
 }

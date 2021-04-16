@@ -24,7 +24,7 @@ public class TestVector {
 		System.out.println("<==================> ");
 		
 		
-		Vector<Integer> vp = new Vector<>(5,1);
+		Vector<Integer> vp = new Vector<>(5,2);
 		System.out.println("<--Initial--> ");
 		System.out.println("Capacity => "+vp.capacity());
 		System.out.println("Size     => "+vp.size());

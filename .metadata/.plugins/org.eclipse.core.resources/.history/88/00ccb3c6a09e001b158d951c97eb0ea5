@@ -1,9 +1,0 @@
-package com.basics.util;
-
-import com.basics.test.*;
-
-public class HashSetUtil {
-
-	private HashSetUtilSet Person = new HashSet<Person>();
-	
-}

@@ -28,6 +28,13 @@ public class TestStreamMethods {
 
 	    numbers.stream().map(x->x*x).forEach(y->System.out.println("ForEach - Numbers::"+y));
 	    
+	    int sum = Arrays.stream(new int[]{1, 2, 3})
+	    		  .filter(i -> i >= 2)
+	    		  .map(i -> i * 3)
+	    		  .sum();
+	    
+	    System.out.println("sum="+sum);
+	    
 	}
 
 }

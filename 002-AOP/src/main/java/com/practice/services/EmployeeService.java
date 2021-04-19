@@ -2,7 +2,7 @@ package com.practice.services;
 
 import org.springframework.stereotype.Service;
 
-import com.practice.models.Employee;
+import com.practice.daos.impl.Employee;
 
 @Service
 public class EmployeeService {

@@ -32,5 +32,10 @@ public class Topic {
 	public void setTopicDesc(String topicDesc) {
 		this.topicDesc = topicDesc;
 	}
+	
+	@Override
+	public String toString() {
+		return "Topic [id="+ id+ "," +"topiName=" +topicName+"," +"topicDesc=" +topicDesc+ "]";
+	}
 
 }

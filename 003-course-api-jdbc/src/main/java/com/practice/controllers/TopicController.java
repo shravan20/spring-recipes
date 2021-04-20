@@ -21,14 +21,14 @@ public class TopicController {
 	@Autowired
 	private TopicService topicService;
 	
+	@GetMapping(path="/get/{id}/")
+	public Topic findById(@PathVariable("id") int id) {
+		return topicService.getTopic(id);
+	}
+	
 	@GetMapping(path="/")
 	public List<Topic> findAll(){
 		return topicService.getAllTopics();
-	}
-
-	@GetMapping(path="/{id}")
-	public Topic findById(@PathVariable("id") int id) {
-		return topicService.getTopic(id);
 	}
 	
 	@PostMapping(path="/")

@@ -8,10 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
+@EnableTransactionManagement
 public class HibernateConfiguration {
 
 	
@@ -30,13 +33,13 @@ public class HibernateConfiguration {
 		@Value("${hibernate.dialect}")
 		private String HIBERNATE_DIALECT;
 		
-		@Value("${hibernate.showmysql}")
+		@Value("${hibernate.show_sql}")
 		private String HIBERNATE_SHOW_MYSQL;
 		
-		@Value("${hibernate.dialect}")
+		@Value("${hibernate.hbm2ddl.auto}")
 		private String HBM2DDL_AUTO;
 		
-		@Value("${hibernate.show_sql}")
+		@Value("${entitymanager.pkgsScan}")
 		private String PACKAGES_TO_SCAN;
 		
 		@Bean
@@ -64,5 +67,11 @@ public class HibernateConfiguration {
 			return sessionFactory;
 		}
 		
+		@Bean
+		public HibernateTransactionManager transactionManager() {
+			HibernateTransactionManager txManager = new HibernateTransactionManager();
+			txManager.setSessionFactory(sessionFactory().getObject());
+			return txManager;
+		}
 		
 }

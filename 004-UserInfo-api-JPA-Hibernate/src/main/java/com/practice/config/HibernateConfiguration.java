@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 @Configuration
 public class HibernateConfiguration {
 
+	
 		@Value("${db.driver}")
 		private String DB_DRIVER;
 		

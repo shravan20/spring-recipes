@@ -31,5 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
-
 /src/main/resources/
+
+.classpath
+.project
+target
+.settings
+.mvn

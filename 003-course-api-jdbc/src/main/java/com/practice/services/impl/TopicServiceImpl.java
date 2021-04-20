@@ -3,11 +3,13 @@ package com.practice.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.practice.daos.TopicDAO;
 import com.practice.models.Topic;
 import com.practice.services.TopicService;
 
+@Service
 public class TopicServiceImpl implements TopicService {
 
 	@Autowired

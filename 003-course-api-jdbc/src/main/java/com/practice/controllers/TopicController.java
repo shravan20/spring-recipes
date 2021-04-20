@@ -21,7 +21,7 @@ public class TopicController {
 	@Autowired
 	private TopicService topicService;
 	
-	@GetMapping(path="/get/{id}/")
+	@GetMapping(path="/{id}")
 	public Topic findById(@PathVariable("id") int id) {
 		return topicService.getTopic(id);
 	}

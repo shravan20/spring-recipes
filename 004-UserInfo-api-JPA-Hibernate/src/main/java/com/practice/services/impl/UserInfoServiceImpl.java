@@ -17,6 +17,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
 	@Autowired
 	private UserInfoDAO userInfoDao;
+
 	@Override
 	public void createUser(UserInfo userinfo) {
 		userInfoDao.addUser(userinfo);

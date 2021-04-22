@@ -19,13 +19,28 @@ import com.practice.exceptions.ResourceNotFoundException;
 import com.practice.models.Employee;
 import com.practice.services.EmployeeService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
+@Api(value = "EmployeeCRUD", description = "CRUD Employee Operations")
 public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
 	
-	@GetMapping(path="/employees")
+	@ApiOperation(value="View List of all Employees", response=Iterable.class)
+	@ApiResponses(
+			value = {
+					@ApiResponse(code=200, message="Successful Execution"),
+					@ApiResponse(code=404, message="Resource Not Found"),
+					@ApiResponse(code=401, message="Unauthorized")
+					
+			}
+			)
+	@GetMapping(path="/employees/")
 	public ResponseEntity<List<Employee>> getAllEmployees() {
 		List<Employee> employees = employeeService.getAllEmployees();
 		if(employees.size()==0)
@@ -35,7 +50,13 @@ public class EmployeeController {
 	}
 	
 	
-	@GetMapping(path="/employee/{empId}")
+	@ApiResponses(
+			value = {
+					@ApiResponse(code=200, message = "Successful Execution"),
+					@ApiResponse(code=404, message = "Resource Not Found")
+			}
+			)
+	@GetMapping(path="/employees/{empId}")
 	public ResponseEntity<Employee> getEmployee(@PathVariable("empId") int empId){
 		Employee employee = employeeService.getEmployee(empId);
 		if(employee==null) {
@@ -45,6 +66,13 @@ public class EmployeeController {
 
 	}
 	
+	
+	@ApiResponses(
+			value= {
+					@ApiResponse(code=200, message = "Successful Execution"),
+					@ApiResponse(code=405, message = "Already exists")
+			}
+			)
 	@PostMapping(path="/employees")
 	public ResponseEntity<String> addEmployee(@RequestBody Employee employee){
 		String retVal = "Failed";
@@ -66,6 +94,12 @@ public class EmployeeController {
 	}
 	
 	
+	@ApiResponses(
+			value= {
+					@ApiResponse(code=200, message = "Successful Execution"),
+					@ApiResponse(code=404, message = "Resource Not Found")
+			}
+			)
 	@PutMapping(path="/employees/{empId}")
 	public ResponseEntity<String> update(@RequestBody Employee employee, @PathVariable("empId") int empId){
 		String retVal = "Failed";
@@ -79,6 +113,12 @@ public class EmployeeController {
 		return new ResponseEntity<String>(retVal, HttpStatus.OK);
 	}
 	
+	@ApiResponses(
+			value= {
+					@ApiResponse(code=200, message = "Successful Execution"),
+					@ApiResponse(code=404, message = "Resource Not Found")
+			}
+			)
 	@DeleteMapping(path="/employees/{empId}")
 	public ResponseEntity<String> delete(@PathVariable("empId") int empId){
 		String retVal = "Failed";

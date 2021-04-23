@@ -19,11 +19,11 @@ public class ProjectRowMapper implements RowMapper<Project> {
 		Project project= new Project();
 		
 		project.setProjectName(rs.getString("projectName"));
-		project.setDuration(rs.getInt("duration"));
+		project.setDuration(rs.getInt("duration"));		
 		project.setId(rs.getInt("id"));
-		List<Employee> employees = new ArrayList<>();
 		
-		employee.setId(rs.getInt("id"));
+		List<Employee> employees = new ArrayList<>();
+		employee.setId(rs.getInt("members"));
 		employees.add(employee);
 		project.setMembers(employees);
 		

@@ -9,51 +9,25 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.practice</groupId>
-	<artifactId>005_EmpCrudService</artifactId>
+	<artifactId>006-SpringSecurity-JDBC-1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>005_EmpCrudService</name>
-	<description>Simple EmpCrud API - using Direct Hibernate</description>
+	<name>006-SpringSecurity-JDBC-1</name>
+	<description>Spring Security JDBC PoC</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-
 		<dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-devtools</artifactId>
-	        <optional>true</optional>
-	    </dependency>
-	    
-	    <dependency>  
-		    <groupId>io.springfox</groupId>  
-		    <artifactId>springfox-swagger-ui</artifactId>  
-		    <version>2.6.1</version>  
-		    <scope>compile</scope>
-		</dependency> 
-	    
-	    <dependency>  
-		    <groupId>io.springfox</groupId>  
-		    <artifactId>springfox-swagger2</artifactId>  
-		    <version>2.6.1</version>
-		    <scope>compile</scope>
-		</dependency>  
-		
-	    
-		<dependency>
-		   <groupId>org.springframework.boot</groupId>
-		   <artifactId>spring-boot-starter-actuator</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -71,6 +45,11 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

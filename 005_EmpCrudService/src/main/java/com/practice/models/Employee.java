@@ -4,15 +4,27 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name="employee")
+@ApiModel 
 public class Employee {
 
 	@Id
+	@ApiModelProperty(value="The primary key for Employee, empId", required=true)
 	private int id;
+	
+	@ApiModelProperty(value="The Employee firstName", required=true)
 	private String firstName;
+	
+	@ApiModelProperty(value="The Employee lastName", required=true)
 	private String lastName;
+	
+	@ApiModelProperty(value="The Employee salary", required=true)
 	private double salary;
+	
 	public int getId() {
 		return id;
 	}

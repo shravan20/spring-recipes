@@ -20,7 +20,7 @@ public class ProjectDaoImpl implements ProjectDAO {
 	
 	@Override
 	public List<Project> getProjects() {
-		final String SQL = "select * from Project";
+		final String SQL = "select * from project";
 		return jdbcTemplate.query(SQL, new ProjectRowMapper());
 	}
 
@@ -33,20 +33,23 @@ public class ProjectDaoImpl implements ProjectDAO {
 
 	@Override
 	public void updateProject(Project project) {
-		// TODO Auto-generated method stub
-		
+		final String SQL = "update project set projectname=? , duration=?, members=? where id = ?";
+		jdbcTemplate.update(SQL, project.getId(), project.getProjectName(), project.getDuration(), project.getMembers());
 	}
 
 	@Override
 	public Project getProject(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		final String SQL="select * from project where id = ?";
+		Project project = jdbcTemplate.queryForObject(SQL, new Object[] {id}, new ProjectRowMapper());
+		System.out.println("Project fetched from DB");
+		return project;
 	}
 
 	@Override
 	public void deleteProject(int id) {
-		// TODO Auto-generated method stub
-		
+		final String SQL="delete from project where id = ?";
+		jdbcTemplate.update(SQL, id);
+		System.out.println("Project deleted from DB");
 	}
 
 }

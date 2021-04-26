@@ -24,6 +24,9 @@ public class ProjectRowMapper implements RowMapper<Project> {
 		
 		List<Employee> employees = new ArrayList<>();
 		employee.setId(rs.getInt("members"));
+		employee.setEmployeeName(rs.getString("employeename"));
+		employee.setEmployeeDesgination(rs.getString("employeedesignation"));
+		
 		employees.add(employee);
 		project.setMembers(employees);
 		

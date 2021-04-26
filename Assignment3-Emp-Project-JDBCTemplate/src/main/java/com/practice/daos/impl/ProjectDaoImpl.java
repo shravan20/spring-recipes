@@ -20,7 +20,8 @@ public class ProjectDaoImpl implements ProjectDAO {
 	
 	@Override
 	public List<Project> getProjects() {
-		final String SQL = "select * from project";
+//		final String SQL = "select * from project p, employee e where p.members=e.id";
+		final String SQL = "select * from project p left join employee e on p.members = e.id";
 		return jdbcTemplate.query(SQL, new ProjectRowMapper());
 	}
 

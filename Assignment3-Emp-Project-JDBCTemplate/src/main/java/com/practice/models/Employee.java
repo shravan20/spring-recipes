@@ -1,11 +1,12 @@
 package com.practice.models;
 
-
+//@table("EmployeeInfo")==>employee_info
 public class Employee {
 
     // Employee (id->int,name->string,designation->string)
 	
 	private int id;
+	// @column("EmployeeName/employeeName") ==> employee_name
 	private String employeeName;
 	private String employeeDesgination;
 	

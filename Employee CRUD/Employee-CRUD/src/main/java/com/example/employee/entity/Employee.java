@@ -17,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "Employee")
-public class Employee  implements Serializable  {
+public class Employee extends Audit implements Serializable  {
 
     private static final long serialVersionUID = -1798070786993154676L;
 

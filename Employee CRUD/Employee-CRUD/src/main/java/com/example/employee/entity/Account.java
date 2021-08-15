@@ -15,7 +15,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 @Table(name = "Account")
-public class Account  implements Serializable {
+public class Account extends Audit implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,7 +27,7 @@ public class Account  implements Serializable {
     @Column(name = "ACC_NO", unique = false, nullable = false, length = 100)
     private String accountNumber;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Employee employee;
 
 }

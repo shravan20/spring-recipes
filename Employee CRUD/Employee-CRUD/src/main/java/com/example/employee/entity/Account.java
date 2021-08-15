@@ -1,4 +1,4 @@
-package com.example.employee.entity;
+package com.practice.employee.entity;
 
 
 import lombok.AllArgsConstructor;

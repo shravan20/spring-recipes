@@ -1,4 +1,4 @@
-package com.example.employee.Employee.CRUD;
+package com.example.employee;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

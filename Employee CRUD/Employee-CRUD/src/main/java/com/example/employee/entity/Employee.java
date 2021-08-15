@@ -27,10 +27,10 @@ public class Employee  implements Serializable  {
     private Integer id;
 
     @Column(name = "FIRST_NAME", unique = false, nullable = false, length = 100)
-    private String            firstName;
+    private String firstName;
 
     @Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)
-    private String            lastName;
+    private String lastName;
 
     @OneToMany(orphanRemoval = true, mappedBy = "employee")
     private Set<Account> accounts;

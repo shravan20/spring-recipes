@@ -18,6 +18,12 @@
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
     </properties>
     <dependencies>
+        <!--MapStruct Processor-->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
         <!--Spring Actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

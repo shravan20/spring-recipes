@@ -1,7 +1,6 @@
 package com.example.employee.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -15,7 +14,6 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.sql.Timestamp;
 
-@Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories
 @EnableJpaAuditing

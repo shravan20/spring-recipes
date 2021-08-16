@@ -1,12 +1,12 @@
 package com.example.employee.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class EmployeeRequestDto {
 
     String firstName;

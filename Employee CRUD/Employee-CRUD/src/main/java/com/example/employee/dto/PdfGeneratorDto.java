@@ -4,11 +4,10 @@ import lombok.*;
 
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmployeeResponseDto {
-    Integer id;
-    String firstName;
-    String lastName;
+@Builder
+public class PdfGeneratorDto {
+    private Integer id;
+    private String label;
 }

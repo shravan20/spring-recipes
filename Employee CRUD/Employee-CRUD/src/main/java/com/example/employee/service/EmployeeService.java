@@ -1,10 +1,17 @@
 package com.example.employee.service;
 
-import com.example.employee.dto.EmployeeRequestDto;
-import com.example.employee.dto.EmployeeResponseDto;
+import com.example.employee.dto.EmployeeDto;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public interface EmployeeService {
 
-    EmployeeResponseDto create(EmployeeRequestDto employee);
+    EmployeeDto create(EmployeeDto employee);
+
+    EmployeeDto get(Integer id) throws Exception;
+
+    void generateEmployeeListPdf() throws FileNotFoundException;
+    void generateHtmlToPdf() throws IOException;
 
 }

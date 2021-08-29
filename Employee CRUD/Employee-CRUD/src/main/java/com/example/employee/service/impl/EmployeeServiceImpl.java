@@ -10,13 +10,12 @@ import com.example.employee.enums.SearchOperation;
 import com.example.employee.mapper.EmployeeMapper;
 import com.example.employee.repository.EmployeeRepository;
 import com.example.employee.service.EmployeeService;
+import com.example.employee.specification.EmployeeSpecification;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
-import com.example.employee.specification.EmployeeSpecification;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,8 +55,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Object filter() {
         EmployeeSpecification specification = new EmployeeSpecification();
-        specification.add(new SearchCriteria("age",30, SearchOperation.LESS_THAN));
-        return mapper.map(employeeRepository.findAll(Specification.where(specification)), EmployeeDto[].class);
+        specification.add(new SearchCriteria("age", 30, SearchOperation.LESS_THAN));
+        return mapper.map(
+                employeeRepository.findAll(Specification.where(specification)),
+                EmployeeDto[].class);
     }
 
     @Override

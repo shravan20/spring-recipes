@@ -1,9 +1,9 @@
 package com.example.employee.specification;
 
 import com.example.employee.commons.dto.SearchCriteria;
-import com.example.employee.commons.utils.Specification;
 import com.example.employee.entity.Employee;
 import com.example.employee.enums.SearchOperation;
+import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

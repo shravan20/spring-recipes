@@ -4,9 +4,12 @@ package com.example.employee.commons.configurations;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 import java.util.Collections;
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -44,9 +47,14 @@ public class BeanConfiguration<T> implements WebMvcConfigurer {
                 "1.0",
                 "Terms of Service",
                 new Contact(
-                        "Employee Service", "https://www.nineleaps.com", "shravan@ohmyscript.com"),
+                        "Employee Service", "https://www.ohmyscript.com", "shravan@ohmyscript.com"),
                 "Apache License Version 2.0",
                 "https://www.apache.org/licesen.html",
                 Collections.emptyList());
+    }
+
+    @Bean
+    public AuditorAware<String> aware() {
+        return () -> Optional.of("Administrator");
     }
 }

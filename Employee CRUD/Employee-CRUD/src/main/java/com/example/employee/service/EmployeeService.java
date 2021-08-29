@@ -11,6 +11,8 @@ public interface EmployeeService {
 
     EmployeeDto get(Integer id) throws Exception;
 
+    Object filter();
+
     void generateEmployeeListPdf() throws FileNotFoundException;
     void generateHtmlToPdf() throws IOException;
 

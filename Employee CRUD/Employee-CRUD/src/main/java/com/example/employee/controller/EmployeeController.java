@@ -11,7 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "api/v1/employee", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/api/v1/employee", produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class EmployeeController {
 
@@ -25,6 +25,11 @@ public class EmployeeController {
     @GetMapping(path = "/{id}")
     public EmployeeDto get(@PathVariable Integer id) throws Exception {
         return employeeService.get(id);
+    }
+
+    @GetMapping(path = "/")
+    public Object filter()  {
+        return employeeService.filter();
     }
 
     /** APIs for PDF generator examples */

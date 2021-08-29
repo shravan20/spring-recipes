@@ -1,4 +1,4 @@
-package com.example.employee.entity;
+package com.example.employee.commons.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.CreatedBy;

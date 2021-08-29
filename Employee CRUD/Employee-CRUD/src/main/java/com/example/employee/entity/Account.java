@@ -1,6 +1,7 @@
 /* (C)2021 */
 package com.example.employee.entity;
 
+import com.example.employee.commons.dto.Audit;
 import com.example.employee.enums.AccountType;
 import java.io.Serializable;
 import javax.persistence.*;

@@ -4,6 +4,8 @@ package com.example.employee.entity;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.*;
+
+import com.example.employee.commons.dto.Audit;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

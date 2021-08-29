@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 
-import com.example.employee.commons.dto.Audit;
+import com.example.employee.commons.dto.AuditModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +19,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "Employee")
-public class Employee extends Audit implements Serializable {
+public class Employee extends AuditModel implements Serializable {
 
     private static final long serialVersionUID = -1798070786993154676L;
 

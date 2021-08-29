@@ -19,7 +19,7 @@ import java.sql.Timestamp;
 @EnableJpaAuditing
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class Audit {
+public class AuditModel {
 
     @JsonFormat(
             shape = JsonFormat.Shape.STRING

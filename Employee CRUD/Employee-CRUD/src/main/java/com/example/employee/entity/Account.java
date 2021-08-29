@@ -1,7 +1,7 @@
 /* (C)2021 */
 package com.example.employee.entity;
 
-import com.example.employee.commons.dto.Audit;
+import com.example.employee.commons.dto.AuditModel;
 import com.example.employee.enums.AccountType;
 import java.io.Serializable;
 import javax.persistence.*;
@@ -16,7 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "Account")
-public class Account extends Audit implements Serializable {
+public class Account extends AuditModel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

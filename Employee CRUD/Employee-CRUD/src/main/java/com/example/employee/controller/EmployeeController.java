@@ -1,15 +1,14 @@
+/* (C)2021 */
 package com.example.employee.controller;
-
 
 import com.example.employee.dto.EmployeeDto;
 import com.example.employee.service.EmployeeService;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 @RestController
 @RequestMapping(path = "api/v1/employee", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -24,10 +23,11 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/{id}")
-    public EmployeeDto get(@PathVariable Integer id) throws Exception{
+    public EmployeeDto get(@PathVariable Integer id) throws Exception {
         return employeeService.get(id);
     }
 
+    /** APIs for PDF generator examples */
     @GetMapping(path = "/generate-pdf")
     public void generateEmployeeListPdf() throws FileNotFoundException {
         employeeService.generateEmployeeListPdf();
@@ -37,5 +37,4 @@ public class EmployeeController {
     public void generateHtmlToPdf() throws IOException {
         employeeService.generateHtmlToPdf();
     }
-
 }

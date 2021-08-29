@@ -4,6 +4,8 @@ package com.example.employee.entity;
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 
 import com.example.employee.commons.dto.Audit;
 import lombok.AllArgsConstructor;
@@ -31,6 +33,18 @@ public class Employee extends Audit implements Serializable {
 
     @Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)
     private String lastName;
+
+    @Column(name = "AGE", nullable = false)
+    @Min(value = 14)
+    private Long age;
+
+    @Column(name = "salary", nullable = false)
+    @Min(value = 1000)
+    private Long salary;
+
+    @Column(name="EMAIL", unique = true, nullable = false)
+    @Email
+    private String email;
 
     @OneToMany(orphanRemoval = true, mappedBy = "employee")
     private Set<Account> accounts;

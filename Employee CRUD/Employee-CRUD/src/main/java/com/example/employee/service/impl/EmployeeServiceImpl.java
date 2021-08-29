@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +23,20 @@ import org.springframework.stereotype.Service;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
+    private final ModelMapper mapper;
 
     @Override
     public EmployeeDto create(EmployeeDto employee) {
-        Employee e = employeeRepository.save(EmployeeMapper.EMPLOYEE_MAPPER.toEntity(employee));
+        // Todo: Modify to MapStruct
+        // Employee e = employeeRepository.save(EmployeeMapper.EMPLOYEE_MAPPER.toEntity(employee));
+        Employee e = employeeRepository.save(mapper.map(employee, Employee.class));
         return EmployeeDto.builder()
                 .id(e.getId())
                 .firstName(e.getFirstName())
                 .lastName(e.getLastName())
+                .age(e.getAge())
+                .salary(e.getSalary())
+                .email(e.getEmail())
                 .build();
     }
 

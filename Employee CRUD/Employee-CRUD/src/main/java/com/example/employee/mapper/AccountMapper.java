@@ -1,8 +1,8 @@
 /* (C)2021 */
 package com.example.employee.mapper;
 
-import com.example.employee.dto.EmployeeDto;
-import com.example.employee.entity.Employee;
+import com.example.employee.dto.AccountDto;
+import com.example.employee.entity.Account;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValuePropertyMappingStrategy;
@@ -11,4 +11,4 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
         componentModel = "spring",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         injectionStrategy = InjectionStrategy.CONSTRUCTOR)
-public interface EmployeeMapper extends ModelMapper<Employee, EmployeeDto> {}
+public interface AccountMapper extends ModelMapper<Account, AccountDto> {}

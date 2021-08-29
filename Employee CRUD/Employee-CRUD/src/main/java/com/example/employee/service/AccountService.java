@@ -1,10 +1,9 @@
 /* (C)2021 */
 package com.example.employee.service;
 
-import com.example.employee.dto.AccountRequestDto;
-import com.example.employee.dto.AccountResponseDto;
+import com.example.employee.dto.AccountDto;
 
 public interface AccountService {
 
-    AccountResponseDto create(AccountRequestDto accountRequest);
+    AccountDto create(AccountDto accountRequest);
 }

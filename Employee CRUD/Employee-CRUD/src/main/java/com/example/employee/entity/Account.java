@@ -1,13 +1,13 @@
+/* (C)2021 */
 package com.example.employee.entity;
 
-
+import com.example.employee.enums.AccountType;
+import java.io.Serializable;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.*;
-import java.io.Serializable;
 
 @Getter
 @Setter
@@ -30,4 +30,7 @@ public class Account extends Audit implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private Employee employee;
 
+    @Column(name = "type")
+    @Enumerated(EnumType.STRING)
+    private AccountType type;
 }

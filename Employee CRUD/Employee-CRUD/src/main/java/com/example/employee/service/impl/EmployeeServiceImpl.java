@@ -38,7 +38,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return EmployeeMapper.EMPLOYEE_MAPPER.toDto(
                 employeeRepository
                         .findById(id)
-                        .orElseThrow(() -> new RuntimeException("Not Found Error")));
+                        .orElseThrow(() -> new RuntimeException("NOT_FOUND_ERROR")));
     }
 
     @Override

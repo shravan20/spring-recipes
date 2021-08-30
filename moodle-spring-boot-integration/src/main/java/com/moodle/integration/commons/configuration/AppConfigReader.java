@@ -18,12 +18,10 @@ import org.springframework.context.annotation.PropertySource;
 @AllArgsConstructor
 @NoArgsConstructor
 @PropertySource(
-        ignoreResourceNotFound = true,
-        value = {"classpath:application.properties"}
-)
+    ignoreResourceNotFound = true,
+    value = {"classpath:application.properties"})
 public class AppConfigReader {
 
-        @Value("${port}")
-        private Long port;
-
+  @Value("${port}")
+  private Long port;
 }

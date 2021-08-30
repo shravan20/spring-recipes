@@ -1,7 +1,8 @@
 plugins {
-	id 'org.springframework.boot' version '2.5.4'
+	id 'org.springframework.boot' version '2.5.1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'com.diffplug.gradle.spotless' version '4.5.1'
 }
 
 group = 'com.moodle'
@@ -16,19 +17,39 @@ configurations {
 
 repositories {
 	mavenCentral()
+	maven {
+		url "https://repo.spring.io/milestone/"
+	}
 }
-
 ext {
 	set('springCloudVersion', "2020.0.3")
 }
 
 dependencies {
+	//	Spring JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// Starter Web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//	Open Feign
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	//	Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	//	Swagger & Swagger UI
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+	//	Model mapper
+	implementation('org.modelmapper:modelmapper:2.3.0')
+	//	Mapstruct
+	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+	//	dev-tool
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// Spotless
+	implementation group: 'com.diffplug.spotless', name: 'spotless-plugin-gradle', version: '5.14.2'
+	// JUnit
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 dependencyManagement {
@@ -39,4 +60,14 @@ dependencyManagement {
 
 test {
 	useJUnitPlatform()
+}
+
+
+apply plugin: "com.diffplug.gradle.spotless"
+
+spotless {
+	java {
+		target '**/*.java'
+		googleJavaFormat()
+	}
 }

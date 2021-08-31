@@ -22,6 +22,6 @@ import org.springframework.context.annotation.PropertySource;
     value = {"classpath:application.properties"})
 public class AppConfigReader {
 
-  @Value("${port}")
+  @Value("${server.port}")
   private Long port;
 }

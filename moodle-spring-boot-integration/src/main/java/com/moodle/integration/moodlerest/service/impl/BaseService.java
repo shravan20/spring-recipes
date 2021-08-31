@@ -24,4 +24,9 @@ public class BaseService implements IBaseService {
     String courseId = "2";
     return baseProxy.getCourseByField(courseId);
   }
+
+  @Override
+  public Object login(String email) {
+    return baseProxy.login(email);
+  }
 }

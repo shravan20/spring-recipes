@@ -2,15 +2,13 @@ package com.moodle.integration.moodlerest.controller;
 
 import static com.moodle.integration.commons.util.Constant.APPLICATION_URI;
 
+import com.moodle.integration.moodlerest.dto.UserEmailDto;
 import com.moodle.integration.moodlerest.service.IBaseService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(APPLICATION_URI)
@@ -47,4 +45,20 @@ public class BaseController {
   Object get() {
     return baseService.getCourseById();
   }
+
+
+  @ApiOperation(value = "Login for new User - External App", notes = "API for Login for new/existing user")
+  @ApiResponses(
+          value = {
+                  @ApiResponse(code = 200, message = "SUCCESS"),
+                  @ApiResponse(code = 401, message = "UNAUTHORIZED"),
+                  @ApiResponse(code = 403, message = "ACCESS_FORBIDDEN"),
+                  @ApiResponse(code = 404, message = "NOT_FOUND"),
+                  @ApiResponse(code = 500, message = "INTERNAL_SERVER_ERROR")
+          })
+  @PostMapping("/login")
+  Object login(@RequestBody UserEmailDto user) {
+    return baseService.login(user.getEmail());
+  }
+
 }

@@ -28,4 +28,13 @@ public interface IBaseProxy {
           "?wsfunction=core_course_get_courses_by_field&wstoken=2813675063eecd0f4242d012c01f1826&moodlewsrestformat=json",
       consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
   Object getCourseByField(@RequestPart(value = "[idnumber]") String id);
+
+
+  @PostMapping(
+          path =
+                  "?wsfunction=auth_userkey_request_login_url&moodlewsrestformat=json&wstoken=ccb5d994367815fdd57b917063e26d1c",
+          consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+  Object login(@RequestPart(value = "user[email]") String email);
+
+
 }

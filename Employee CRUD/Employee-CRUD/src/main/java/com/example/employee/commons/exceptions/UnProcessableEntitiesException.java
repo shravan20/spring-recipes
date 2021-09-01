@@ -1,14 +1,14 @@
+/* (C)2021 */
 package com.example.employee.commons.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
-
-import java.util.List;
 
 /**
  * The type UnProcessableEntity Exception.
@@ -32,5 +32,5 @@ import java.util.List;
 @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
 public class UnProcessableEntitiesException extends RuntimeException {
 
-  private List<ValidationError> errors;
+    private List<ValidationError> errors;
 }

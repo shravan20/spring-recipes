@@ -1,12 +1,12 @@
+/* (C)2021 */
 package com.example.employee.commons.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 /**
  * The type Validation error response. @AllArgsConstructor annotation Generates an all-args
@@ -25,6 +25,6 @@ import java.util.List;
 @NoArgsConstructor
 @JsonIgnoreProperties("message")
 public class ValidationErrorResponse {
-  private String status;
-  private List<ValidationError> errors;
+    private String status;
+    private List<ValidationError> errors;
 }

@@ -32,5 +32,5 @@ import java.util.List;
 @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY)
 public class UnProcessableEntitiesException extends RuntimeException {
 
-  private List<com.timhortons.commons.exceptions.ValidationError> errors;
+  private List<ValidationError> errors;
 }

@@ -26,5 +26,5 @@ import java.util.List;
 @JsonIgnoreProperties("message")
 public class ValidationErrorResponse {
   private String status;
-  private List<com.timhortons.commons.exceptions.ValidationError> errors;
+  private List<ValidationError> errors;
 }

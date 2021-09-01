@@ -15,5 +15,5 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ResponseStatus(value = HttpStatus.CONFLICT)
 public class AlreadyExistsException extends RuntimeException {
-  private String message;
+	private String message;
 }

@@ -8,6 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class PdfGeneratorDto {
-    private Integer id;
-    private String label;
+	private Integer id;
+	private String label;
 }

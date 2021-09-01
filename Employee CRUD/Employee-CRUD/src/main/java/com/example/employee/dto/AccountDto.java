@@ -9,11 +9,11 @@ import lombok.Setter;
 @Setter
 public class AccountDto {
 
-    private Integer id;
+	private Integer id;
 
-    private String accountNumber;
+	private String accountNumber;
 
-    private Integer employeeId;
+	private Integer employeeId;
 
-    private AccountType type;
+	private AccountType type;
 }

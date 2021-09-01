@@ -11,8 +11,8 @@ import lombok.*;
 @ToString
 public class SearchCriteria {
 
-    private String key;
-    private Object value;
-    private SearchOperation operation;
+	private String key;
+	private Object value;
+	private SearchOperation operation;
 
 }

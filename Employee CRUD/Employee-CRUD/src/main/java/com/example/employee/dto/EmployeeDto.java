@@ -12,22 +12,22 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class EmployeeDto {
 
-    Integer id;
+	Integer id;
 
-    @NotNull(message = "MANDATORY FIELD: firstName")
-    private String firstName;
+	@NotNull(message = "MANDATORY FIELD: firstName")
+	private String firstName;
 
-    @NotNull(message = "MANDATORY FIELD: lastName")
-    private String lastName;
+	@NotNull(message = "MANDATORY FIELD: lastName")
+	private String lastName;
 
-    @Email(message = "INVALID_FORMAT: email")
-    @NotNull(message = "MANDATORY FIELD: email")
-    private String email;
+	@Email(message = "INVALID_FORMAT: email")
+	@NotNull(message = "MANDATORY FIELD: email")
+	private String email;
 
-    @NotNull(message = "MANDATORY FIELD: salary")
-    private Long salary;
+	@NotNull(message = "MANDATORY FIELD: salary")
+	private Long salary;
 
-    @NotNull(message = "MANDATORY FIELD: age")
-    private Long age;
+	@NotNull(message = "MANDATORY FIELD: age")
+	private Long age;
 
 }

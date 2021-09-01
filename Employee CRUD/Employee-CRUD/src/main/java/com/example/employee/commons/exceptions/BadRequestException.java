@@ -15,21 +15,23 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BadRequestException extends RuntimeException {
 
-  private final String message;
+	private final String message;
 
-  /**
-   * Instantiates a new Bad request exception.
-   *
-   * @param message the message
-   */
-  public BadRequestException(String message) {
-    super(message);
-    this.message = message;
-  }
+	/**
+	 * Instantiates a new Bad request exception.
+	 *
+	 * @param message the message
+	 */
+	public BadRequestException(String message) {
+		super(message);
+		this.message = message;
+	}
 
-  /** @return message */
-  @Override
-  public String getMessage() {
-    return message;
-  }
+	/**
+	 * @return message
+	 */
+	@Override
+	public String getMessage() {
+		return message;
+	}
 }

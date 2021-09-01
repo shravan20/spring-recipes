@@ -15,5 +15,5 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 public class PersistenceException extends RuntimeException {
-  private String message;
+	private String message;
 }

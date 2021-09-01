@@ -8,7 +8,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
 @Mapper(
-        componentModel = "spring",
-        nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
-        injectionStrategy = InjectionStrategy.CONSTRUCTOR)
-public interface AccountMapper extends ModelMapper<Account, AccountDto> {}
+	componentModel = "spring",
+	nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
+	injectionStrategy = InjectionStrategy.CONSTRUCTOR)
+public interface AccountMapper extends ModelMapper<Account, AccountDto> {
+}

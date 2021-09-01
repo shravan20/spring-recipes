@@ -21,21 +21,21 @@ import java.sql.Timestamp;
 @EntityListeners(AuditingEntityListener.class)
 public class AuditModel {
 
-    @JsonFormat(
-            shape = JsonFormat.Shape.STRING
-    )
-    @CreatedDate
-    private Timestamp createdAt;
+	@JsonFormat(
+		shape = JsonFormat.Shape.STRING
+	)
+	@CreatedDate
+	private Timestamp createdAt;
 
-    @CreatedBy
-    private String createdBy;
+	@CreatedBy
+	private String createdBy;
 
-    @JsonFormat(
-            shape = JsonFormat.Shape.STRING
-    )
-    @LastModifiedDate
-    private Timestamp updatedAt;
+	@JsonFormat(
+		shape = JsonFormat.Shape.STRING
+	)
+	@LastModifiedDate
+	private Timestamp updatedAt;
 
-    @LastModifiedBy
-    private String updatedBy;
+	@LastModifiedBy
+	private String updatedBy;
 }

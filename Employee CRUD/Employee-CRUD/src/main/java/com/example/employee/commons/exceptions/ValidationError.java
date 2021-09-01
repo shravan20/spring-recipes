@@ -17,7 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ValidationError extends Throwable {
 
-  private String field;
-  private String code;
-  private String message;
+	private String field;
+	private String code;
+	private String message;
 }

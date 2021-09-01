@@ -21,6 +21,6 @@ import lombok.Setter;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResponseMessage {
 
-  private String status;
-  private ErrorResponse errors;
+	private String status;
+	private ErrorResponse errors;
 }

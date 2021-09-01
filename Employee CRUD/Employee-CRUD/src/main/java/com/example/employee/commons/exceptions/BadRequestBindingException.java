@@ -18,5 +18,5 @@ import java.util.List;
 @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 public class BadRequestBindingException extends RuntimeException {
 
-  private List<ValidationError> errors;
+	private List<ValidationError> errors;
 }

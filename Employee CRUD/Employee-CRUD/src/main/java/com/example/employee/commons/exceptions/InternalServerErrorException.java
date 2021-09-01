@@ -16,24 +16,24 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 public class InternalServerErrorException extends RuntimeException {
 
-  private final String message;
+	private final String message;
 
-  /**
-   * Instantiates a new Internal server error exception.
-   *
-   * @param message the message
-   */
-  public InternalServerErrorException(String message) {
-    super(message);
-    this.message = message;
-  }
+	/**
+	 * Instantiates a new Internal server error exception.
+	 *
+	 * @param message the message
+	 */
+	public InternalServerErrorException(String message) {
+		super(message);
+		this.message = message;
+	}
 
-  /**
-   * get message
-   *
-   * @return message
-   */
-  public String getMessage() {
-    return this.message;
-  }
+	/**
+	 * get message
+	 *
+	 * @return message
+	 */
+	public String getMessage() {
+		return this.message;
+	}
 }

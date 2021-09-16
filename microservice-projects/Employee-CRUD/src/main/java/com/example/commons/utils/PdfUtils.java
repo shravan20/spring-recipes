@@ -1,5 +1,5 @@
 /* (C)2021 */
-package com.example.employee.commons.utils;
+package com.example.commons.utils;
 
 import com.example.employee.dto.PdfGeneratorDto;
 import com.itextpdf.html2pdf.HtmlConverter;

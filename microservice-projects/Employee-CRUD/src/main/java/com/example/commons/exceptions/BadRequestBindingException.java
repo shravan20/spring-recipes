@@ -1,4 +1,4 @@
-package com.example.employee.commons.exceptions;
+package com.example.commons.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -8,12 +8,15 @@ import lombok.Setter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.List;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
-@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-public class PersistenceException extends RuntimeException {
-	private String message;
+@ResponseStatus(value = HttpStatus.BAD_REQUEST)
+public class BadRequestBindingException extends RuntimeException {
+
+	private List<ValidationError> errors;
 }

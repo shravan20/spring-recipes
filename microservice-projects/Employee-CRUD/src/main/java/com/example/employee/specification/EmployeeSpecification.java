@@ -1,6 +1,6 @@
 package com.example.employee.specification;
 
-import com.example.employee.commons.dto.SearchCriteria;
+import com.example.commons.dto.SearchCriteria;
 import com.example.employee.entity.Employee;
 import com.example.employee.enums.SearchOperation;
 import org.springframework.data.jpa.domain.Specification;

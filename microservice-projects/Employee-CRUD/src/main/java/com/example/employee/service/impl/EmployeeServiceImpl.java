@@ -1,8 +1,8 @@
 /* (C)2021 */
 package com.example.employee.service.impl;
 
-import com.example.employee.commons.dto.SearchCriteria;
-import com.example.employee.commons.utils.PdfUtils;
+import com.example.commons.dto.SearchCriteria;
+import com.example.commons.utils.PdfUtils;
 import com.example.employee.dto.EmployeeDto;
 import com.example.employee.dto.PdfGeneratorDto;
 import com.example.employee.entity.Employee;

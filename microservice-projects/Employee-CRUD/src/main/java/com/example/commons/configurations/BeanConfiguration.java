@@ -1,5 +1,5 @@
 /* (C)2021 */
-package com.example.employee.commons.configurations;
+package com.example.commons.configurations;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

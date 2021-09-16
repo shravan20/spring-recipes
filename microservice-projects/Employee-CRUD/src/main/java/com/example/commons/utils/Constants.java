@@ -1,4 +1,4 @@
-package com.example.employee.commons.utils;
+package com.example.commons.utils;
 
 import lombok.experimental.UtilityClass;
 

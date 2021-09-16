@@ -1,4 +1,4 @@
-package com.example.employee.commons.exceptions;
+package com.example.commons.exceptions;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static com.example.employee.commons.utils.Constants.ERROR;
+import static com.example.commons.utils.Constants.ERROR;
 
 @Slf4j(topic = "GlobalErrorHandler")
 @ControllerAdvice

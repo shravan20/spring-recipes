@@ -1,5 +1,5 @@
 /* (C)2021 */
-package com.example.employee.commons.exceptions;
+package com.example.commons.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 /* (C)2021 */
 package com.example.employee.entity;
 
-import com.example.employee.commons.dto.AuditModel;
+import com.example.commons.dto.AuditModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

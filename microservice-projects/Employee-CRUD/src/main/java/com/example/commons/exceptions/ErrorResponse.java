@@ -1,4 +1,4 @@
-package com.example.employee.commons.exceptions;
+package com.example.commons.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
